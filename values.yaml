@@ -1,3 +1,8 @@
+executor: KubernetesExecutor
+
+postgresql:
+  enabled: true
+
 dags:
   gitSync:
     enabled: true
@@ -15,3 +20,25 @@ dags:
     
     # Number of retries for git operations
     maxFailures: 0
+
+scheduler:
+  resources:
+    requests:
+      memory: "512Mi"
+      cpu: "250m"
+    limits:
+      memory: "1Gi"
+      cpu: "500m"
+
+webserver:
+  resources:
+    requests:
+      memory: "512Mi"
+      cpu: "250m"
+    limits:
+      memory: "1Gi"
+      cpu: "500m"
+
+logs:
+  persistence:
+    enabled: true

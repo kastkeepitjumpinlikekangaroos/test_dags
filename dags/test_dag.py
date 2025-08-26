@@ -19,10 +19,6 @@ def process_data(**context):
     """
     Example function that processes data using only built-in Python libraries
     """
-    # Get execution date from context
-    execution_date = context['execution_date']
-    print(f"Execution date: {execution_date}")
-    
     # Sample data processing
     data = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
     
