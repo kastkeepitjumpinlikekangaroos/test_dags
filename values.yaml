@@ -1,0 +1,17 @@
+dags:
+  gitSync:
+    enabled: true
+    repo: https://github.com/kastkeepitjumpinlikekangaroos/test_dags
+    branch: main
+    # For private repositories, use ssh with deploy keys
+    # repo: git@github.com:your-username/your-airflow-dags.git
+    # sshKeySecret: airflow-git-ssh-key
+    
+    # Optional: subdirectory within the repo
+    subPath: "dags"
+    
+    # Polling interval (default: 60s)
+    wait: 60
+    
+    # Number of retries for git operations
+    maxFailures: 0
