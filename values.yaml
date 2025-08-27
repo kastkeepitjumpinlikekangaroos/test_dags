@@ -39,6 +39,19 @@ webserver:
       memory: "1Gi"
       cpu: "500m"
 
+
+workers:
+  resources:
+    requests:
+      memory: "1Gi"
+      cpu: "500m"
+    limits:
+      memory: "2Gi"
+      cpu: "1000m"
+
 logs:
   persistence:
     enabled: true
+    # need read write multiple which uses a filestore backend on GKE otherwise logs don't sync using standard
+    storageClassName: "standard-rwx"  
+    size: 10Gi
